@@ -19,7 +19,7 @@ class ApllyInfoForm(forms.ModelForm):
             'sex':forms.ChoiceField(choices=SEX_CHOICES,required=True,widget=forms.Select(attrs={'class':'form-control',})),
             'student_id':forms.TextInput(attrs={"class":'form-control'}),
             'tel_num':forms.TextInput(attrs={"class":'form-control'}),
-            'email':form.EmailField(atrrs={"class":'form-control'}),
+            'email':form.TextInput(atrrs={"class":'form-control'}),
             'apartment':forms.ChoiceField(choices=APARTMENT,required=True,widget=forms.Select(attrs={'class':'form-control'})),
             'college':forms.ChoiceField(choices=COLLEGE_DICT.get(0, None),widget=forms.Select(attrs={'class':'form-control'})),
             'wish_first':forms.ChoiceField(choices=CLASS_CHOICES,wiget=forms.Select(attrs={'class':'form-control'})),
