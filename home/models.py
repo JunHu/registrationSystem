@@ -11,5 +11,7 @@ class ApplyInfo(models.Model):
     email=models.EmailField(blank=False,verbose_name=u"邮箱")
     apartment=models.IntegerField(blank=False,verbose_name=u"学部")
     college=models.IntegerField(blank=False,verbose_name=u"院系")
+    wish_first=models.IntegerField(blank=False,verbose_name=u"第一志愿")
+    wish_second=models.IntegerField(blank=False,verbose_name=u"第二志愿")
     self_introduction=models.TextField(max_length=600,blank=True,null=True,verbose_name=u"自我介绍")
 
