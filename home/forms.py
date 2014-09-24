@@ -15,14 +15,14 @@ class ApllyInfoForm(forms.ModelForm):
         model=ApplyInfo
     
         widgets={
-            'student_name':forms.TextInput(attrs={'class':'form-control','placeholder':u"姓名"}),
-            'sex':forms.ChoiceField(choices=SEX_CHOICES,required=True,widget=forms.Select(attrs={'class':'form-control',})),
-            'student_id':forms.TextInput(attrs={"class":'form-control'}),
-            'tel_num':forms.TextInput(attrs={"class":'form-control'}),
-            'email':form.TextInput(atrrs={"class":'form-control'}),
-            'apartment':forms.ChoiceField(choices=APARTMENT,required=True,widget=forms.Select(attrs={'class':'form-control'})),
-            'college':forms.ChoiceField(choices=COLLEGE_DICT.get(0, None),widget=forms.Select(attrs={'class':'form-control'})),
-            'wish_first':forms.ChoiceField(choices=CLASS_CHOICES,wiget=forms.Select(attrs={'class':'form-control'})),
-            'wish_second':forms.ChoiceField(choices=CLASS_CHOICES,wiget=forms.Select(attrs={'class':'form-control'})),
-            'self_introduction':forms.Textarea(attrs={'class':'form-control','placeholder':u"请做简单自我介绍，包括自己特长和参加科技竞赛获奖经历。"})
+            'student_name':forms.TextInput(attrs={'class':'form-control regis-input','placeholder':u"姓名"}),
+            'sex':forms.Select(attrs={'class':'form-control regis-input',}),
+            'student_id':forms.TextInput(attrs={"class":'form-control regis-input'}),
+            'tel_num':forms.TextInput(attrs={"class":'form-control regis-input'}),
+            'email':forms.TextInput(attrs={"class":'form-control regis-input'}),
+            'apartment':forms.Select(attrs={'class':'form-control regis-input'}),
+            'college':forms.Select(attrs={'class':'form-control regis-input'}),
+			'wish_first':forms.Select(attrs={'class':'form-control regis-input'}),
+            'wish_second':forms.Select(attrs={'class':'form-control regis-input'}),
+            'self_introduction':forms.Textarea(attrs={'class':'form-control','placeholder':u"请做简单自我介绍，包括自己特长和参加科技竞赛获奖经历(300字以内)。"})
     }
