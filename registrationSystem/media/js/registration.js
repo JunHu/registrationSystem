@@ -1,9 +1,22 @@
-$("#id_apartment").change(function(){
-    var value=$(this).children('option:selected').val();
+$(document).ready(function(){
+function getCollege()
+{
+    var value=$("#id_apartment").children('option:selected').val();
     if(value)
     {
         Dajaxice.home.getCollege(getCollegeCallBack,{"apartment":value});
     }
+    else
+    {
+        $("#id_college").empty();
+        $("<option value selected='selected'>---------</option>").appendTo("#id_college");
+    }
+}
+
+
+getCollege();
+$("#id_apartment").change(function(){
+    getCollege();
 });
 function getCollegeCallBack(data)
 {
@@ -15,3 +28,6 @@ function getCollegeCallBack(data)
         $("<option value="+college[v][0]+">"+college[v][1]+"</option>").appendTo("#id_college");
     }
 }
+
+
+});
