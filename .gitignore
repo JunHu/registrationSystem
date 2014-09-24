@@ -1,0 +1,13 @@
+#developer file
+*.pyc
+*.swp
+*.swo
+*.orig
+*~
+
+#uploadfile
+media/uploadfile/*
+media/tmp/* 
+
+#South 
+*/migrations/
