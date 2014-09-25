@@ -23,34 +23,47 @@
       <div class="form-group">
         <label class="col-sm-2 control-label regis-label">姓名</label>
         {{form.student_name}}
+        {{form.student_name.errors}}
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label regis-label">学号</label>
+        {{form.student_id}}
+        {{form.student_id.errors}}
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label regis-label">性别</label>
         {{form.sex}}
+        {{form.sex.errors}}
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label regis-label">电话</label>
         {{form.tel_num}}
+        {{form.tel_num.errors}}
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label regis-label">邮箱</label>
         {{form.email}}
+        {{form.email.errors}}
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label regis-label">学部</label>
         {{form.apartment}}
+        {{form.apartment.errors}}
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label regis-label">专业</label>
         {{form.college}}
+        {{form.college.errors}}
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label regis-label">第一志愿</label>
         {{form.wish_first}}
+        {{form.wish_first.errors}}
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label regis-label">第二志愿</label>
         {{form.wish_second}}
+        {{form.wish_second.errors}}
       </div>
       <div class="form-group">
         <label class="col-sm-2 control-label regis-label">自我简介</label>

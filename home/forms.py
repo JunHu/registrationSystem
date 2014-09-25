@@ -6,9 +6,10 @@ from const import *
 class ApllyInfoForm(forms.ModelForm):
     def clean(self):
         clean=self.cleaned_data
-        first = self.cleaned_data["wish_first"]
-        second = self.cleaned_data["wish_second"]
-        if first == second:
+        first = clean.get("wish_first")
+        second = clean.get("wish_second")
+        print type(first), type(second)
+        if first and first == second:
             raise forms.ValidationError("两个志愿不能相同")
         return clean
     class Meta:

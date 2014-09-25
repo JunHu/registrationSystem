@@ -9,8 +9,13 @@ from django.views.decorators import csrf
 @csrf.csrf_protect
 def home_view(request):
     if request.method == "POST":
-        return HttpResponse("沈潋是胡骏爸爸")
-    form = ApllyInfoForm()
+        form = ApllyInfoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("successfully!")
+    else:        
+        form = ApllyInfoForm()
+    print form.errors
     context = {
             "form":form,
         }
