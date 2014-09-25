@@ -3,9 +3,11 @@
 from django.shortcuts import render_to_response, render
 from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
-from home.forms import  ApllyInfoForm
+from home.forms import  ApllyInfoForm, ClassForm
 from django.views.decorators import csrf
 from django.core.urlresolvers import reverse
+
+from const import *
 
 @csrf.csrf_protect
 def home_view(request):
@@ -23,3 +25,10 @@ def home_view(request):
 
 def response_view(request):
 	return render(request, "response.html", {})
+
+def export_view(request):
+    form = ClassForm()
+    context = {
+        "form": form,
+    }
+    return render(request, "export.html", context)

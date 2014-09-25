@@ -3,6 +3,10 @@
 from django import forms
 from home.models import ApplyInfo
 from const import *
+
+class ClassForm(forms.Form):
+    classes = forms.ChoiceField(choices = CLASS_CHOICES, required = True, label = "实践班", widget = forms.Select(attrs={"class": "form-control regis-input"}))
+
 class ApllyInfoForm(forms.ModelForm):
     def clean_wish_second(self):
         first = self.cleaned_data.get("wish_first")

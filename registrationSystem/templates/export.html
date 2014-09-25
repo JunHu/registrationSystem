@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container content-container">
+  <div class="container main-content-container">
+
+    <form method="post" class="form" action="." id="form_export" style="width:600px;margin:30px auto 0 auto;">
+        {{ form.classes }}
+        <hr>
+        <div class="div-commit">
+        <input class="btn btn-primary" value="确定"></input>
+        </div>
+    </form>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}style/home/registration.css"/>
+  </div>
+</div>
+{% endblock %}
