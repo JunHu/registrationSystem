@@ -10,6 +10,7 @@ dajaxice_autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'home.views.home_view'),
+    url(r'^response$', 'home.views.response_view'),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

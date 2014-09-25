@@ -4,14 +4,12 @@ from django import forms
 from home.models import ApplyInfo
 from const import *
 class ApllyInfoForm(forms.ModelForm):
-    def clean(self):
-        clean=self.cleaned_data
-        first = clean.get("wish_first")
-        second = clean.get("wish_second")
-        print type(first), type(second)
-        if first and first == second:
+    def clean_wish_second(self):
+        first = self.cleaned_data.get("wish_first")
+        second = self.cleaned_data.get("wish_second")
+        if first == second:
             raise forms.ValidationError("两个志愿不能相同")
-        return clean
+        return second
     class Meta:
         model=ApplyInfo
     
