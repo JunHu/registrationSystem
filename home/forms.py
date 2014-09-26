@@ -19,11 +19,11 @@ class ApllyInfoForm(forms.ModelForm):
     
         widgets={
             'student_name':forms.TextInput(attrs={'class':'form-control regis-input','placeholder':u"姓名"}),
-            'sex':forms.Select(attrs={'class':'form-control regis-input',}),
-            'student_id':forms.TextInput(attrs={"class":'form-control regis-input'}),
-            'tel_num':forms.TextInput(attrs={"class":'form-control regis-input'}),
-            'email':forms.TextInput(attrs={"class":'form-control regis-input'}),
-            'apartment':forms.Select(attrs={'class':'form-control regis-input'}),
+            'sex':forms.Select(attrs={'class':'form-control regis-input', 'placeholder':u'性别'}),
+            'student_id':forms.TextInput(attrs={"class":'form-control regis-input', 'placeholder': '学号'}),
+            'tel_num':forms.TextInput(attrs={"class":'form-control regis-input', 'placeholder': '电话'}),
+            'email':forms.TextInput(attrs={"class":'form-control regis-input', 'placeholder': '邮箱'}),
+            'apartment':forms.Select(attrs={'class':'form-control regis-input', }),
             'college':forms.Select(attrs={'class':'form-control regis-input'}),
 			'wish_first':forms.Select(attrs={'class':'form-control regis-input'}),
             'wish_second':forms.Select(attrs={'class':'form-control regis-input'}),
