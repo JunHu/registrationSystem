@@ -4,6 +4,7 @@ from django.utils import simplejson
 from django.db.models import Q
 from const import *
 from models import *
+from utility import info_xls_baseinformation
 @dajaxice_register
 def getCollege(request,apartment):
     apartment=int(apartment)
@@ -12,7 +13,10 @@ def getCollege(request,apartment):
 
 @dajaxice_register
 def exportData(request, choose):
+    print "haha"
     message = ""
     choose = int(choose)
     obj = ApplyInfo.objects.filter(Q(wish_first = choose) | Q(wish_second = choose))
-    return simplejson.dumps({"message": message})
+    class_type = CLASS_CHOICES[choose][1] 
+    path = info_xls_baseinformation(request,obj,class_type)
+    return simplejson.dumps({"message": message,"path":path})

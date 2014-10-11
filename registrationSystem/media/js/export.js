@@ -3,5 +3,5 @@ $("#submit_export").click(function(){
     Dajaxice.home.exportData(exportDataCallBack, {"choose": choose});
 });
 function exportDataCallBack(data){
-    alert(data.message);
+    location.href = data.path;
 }
