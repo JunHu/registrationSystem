@@ -16,4 +16,5 @@ class ApplyInfo(models.Model):
     wish_first=models.IntegerField(blank=False,choices=CLASS_CHOICES,verbose_name=u"第一志愿")
     wish_second=models.IntegerField(blank=False,choices=CLASS_CHOICES,verbose_name=u"第二志愿")
     self_introduction=models.TextField(max_length=600,blank=True,null=True,verbose_name=u"自我介绍")
-
+    def __unicode__(self):
+        return self.student_name
