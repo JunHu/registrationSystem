@@ -127,6 +127,8 @@ TEMPLATE_DIRS = (
     join(SETTINGS_ROOT, "templates"),
 )
 
+
+
 print join(SETTINGS_ROOT, "templates")
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -173,3 +175,7 @@ LOGGING = {
         },
     }
 }
+
+
+TMP_FILES_PATH = join(MEDIA_ROOT, "tmp")
+
