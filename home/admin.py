@@ -3,6 +3,7 @@ from models import *
 
 RegisterClass = (
     ApplyInfo,
+    EntryInfo,
 )
 
 for temp in RegisterClass:
