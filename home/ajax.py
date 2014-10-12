@@ -13,7 +13,6 @@ def getCollege(request,apartment):
 
 @dajaxice_register
 def exportData(request, choose,wish):
-    print "haha"
     message = ""
     choose = int(choose)
     wish=int(wish)

@@ -12,7 +12,9 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'home.views.home_view'),
     url(r'^response$', 'home.views.response_view'),
+	url(r'^response2$', 'home.views.response2_view'),
     url(r'^export$', 'home.views.export_view'),
+    url(r'^entry$', 'home.views.entry_view'),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
