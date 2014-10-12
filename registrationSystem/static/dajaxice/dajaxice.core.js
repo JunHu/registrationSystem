@@ -9,6 +9,10 @@ var Dajaxice = {
     
     home: {
     
+    exportData: function(callback_function, argv, custom_settings){
+        return Dajaxice.call('home.exportData', 'POST', callback_function, argv, custom_settings);
+    },
+
     getCollege: function(callback_function, argv, custom_settings){
         return Dajaxice.call('home.getCollege', 'POST', callback_function, argv, custom_settings);
     }
