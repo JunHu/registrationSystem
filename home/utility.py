@@ -50,7 +50,7 @@ def info_xls_baseinformation_gen(class_type):
     worksheet.col(9).width = len('自我介绍') * 1000
     return worksheet, workbook
 
-def info_xls_baseinformation(request,apply_set,class_type):
+def info_xls_baseinformation(request,apply_set,class_type, wish):
     """
     """
     def _format_number(i):
@@ -78,7 +78,8 @@ def info_xls_baseinformation(request,apply_set,class_type):
         # _index += 1
         _number+= 1
     # write xls file
-    filename = "%s%s.xls"%(str(datetime.date.today().year)+"大连理工大学",class_type+"招新统计表")
+    wish_str = "第一志愿" if wish == 0 else "第二志愿"
+    filename = "%s%s.xls"%(str(datetime.date.today().year)+"大连理工大学",class_type+wish_str+"招新统计表")
     save_path = os.path.join(TMP_FILES_PATH,filename)
     print save_path
     workbook.save(save_path)
