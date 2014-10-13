@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container content-container">
+  <div class="container main-content-container">
+
+    <form method="post" class="form-horizontal"  enctype="multipart/form-data" action="/entry" id="form_registration" style="width:600px;margin:30px auto 0 auto;">
+      <div>
+        <h1>创新学院实践班录入</h1>
+      </div>
+      <hr>
+      {% csrf_token %}
+      {{form.non_field_errors}}
+      <div class="form-group">
+        <label class="col-sm-2 control-label regis-label">姓名</label>
+        {{form.student_name}}
+        {{form.student_name.errors}}
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label regis-label">学号</label>
+        {{form.student_id}}
+        {{form.student_id.errors}}
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label regis-label">性别</label>
+        {{form.sex}}
+        {{form.sex.errors}}
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label regis-label">电话</label>
+        {{form.tel_num}}
+        {{form.tel_num.errors}}
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label regis-label">邮箱</label>
+        {{form.email}}
+        {{form.email.errors}}
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label regis-label">学部</label>
+        {{form.apartment}}
+        {{form.apartment.errors}}
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label regis-label">专业</label>
+        {{form.college}}
+        {{form.college.errors}}
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label regis-label">志愿</label>
+        {{form.wish_type}}
+        {{form.wish_type.errors}}
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label regis-label">是否为第一志愿</label>
+        {{form.wish_grade}}
+        {{form.wish_grade.errors}}
+      </div>
+      <div class="div-commit">
+        <input class="btn btn-default btn-warning dialog-button" name="commit" type="submit" value="录入"></input>
+      </div>
+    </form>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}style/home/registration.css"/>
+  </div> 
+</div>
+<script type="text/javascript" src="{{STATIC_URL}}js/registration.js"></script>
+{% endblock %}

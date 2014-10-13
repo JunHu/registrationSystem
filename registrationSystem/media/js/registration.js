@@ -33,8 +33,10 @@ function getCollegeCallBack(data)
 });
 
 $("input[name='commit']").click(function(){
+    if(window.location.pathname=="/entry")) return true;
+    
     if(confirm("相同学号只能提交一次, 确认是否提交报名信息...")){
         return true;
-    }
+     }
     return false;
 });

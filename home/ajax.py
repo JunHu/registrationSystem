@@ -13,7 +13,6 @@ def getCollege(request,apartment):
 
 @dajaxice_register
 def exportData(request, choose):
-    print "haha"
     message = ""
     choose = int(choose)
     obj = ApplyInfo.objects.filter(Q(wish_first = choose) | Q(wish_second = choose))

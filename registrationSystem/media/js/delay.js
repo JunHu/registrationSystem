@@ -9,4 +9,9 @@ function delayURL(url) {
     setTimeout("delayURL('" + url + "')", 1000);
 }
 
-$(document).ready(delayURL("/"))
+$(document).ready(function(){
+		if(window.location.pathname == "/response")
+			delayURL("/");
+		else
+			delayURL("/entry");
+});

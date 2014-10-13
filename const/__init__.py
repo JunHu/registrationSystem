@@ -1,4 +1,8 @@
 #coding: UTF-8
+YES_NO = (
+    (0, "是"),
+    (1, "否"),
+)
 
 CLASS_CHOICES = (
     (0, "机电实践班"),
