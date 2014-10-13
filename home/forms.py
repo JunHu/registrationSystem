@@ -5,8 +5,11 @@ from home.models import ApplyInfo, EntryInfo
 from const import *
 
 class ClassForm(forms.Form):
-    classes = forms.ChoiceField(choices = CLASS_CHOICES, required = True, label = "实践班", widget = forms.Select(attrs={"class": "form-control regis-input"}))
 
+    wish_choice=(('0',u'第一志愿'),('1',u'第二志愿'))
+    classes = forms.ChoiceField(choices = CLASS_CHOICES, required = True, label = "实践班", widget = forms.Select(attrs={"class": "form-control regis-input"}))
+    wish=forms.ChoiceField(choices=wish_choice,required=True,label="志愿",widget = forms.Select(attrs={"class":"form-control regis-input"}))
+    
 class ApllyInfoForm(forms.ModelForm):
     def clean_wish_second(self):
         first = self.cleaned_data.get("wish_first")
